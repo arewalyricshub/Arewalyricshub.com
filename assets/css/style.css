@@ -239,3 +239,75 @@ footer {
         font-size: 30px;
     }
   }
+/* AUTH PAGES */
+
+.auth-page {
+    min-height: 80vh;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    background: #0b2a1e;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.auth-box h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.auth-box > p:not(.tagline) {
+    color: #b9c8c1;
+    margin-bottom: 25px;
+}
+
+.auth-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-box label {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #06150f;
+    color: white;
+    outline: none;
+}
+
+.auth-box input:focus {
+    border-color: #d4af37;
+}
+
+.auth-box button {
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.auth-link a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+}
