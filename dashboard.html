@@ -3,95 +3,479 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Arewa Lyrics Hub</title>
+
+    <title>Member Dashboard | Arewa Lyrics Hub</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="logo">AREWA <span>LYRICS HUB</span></div>
+    <!-- HEADER -->
+    <header class="member-header">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="login.html">Logout</a>
-    </nav>
-</header>
+        <div class="container">
 
-<main class="dashboard">
+            <div class="member-nav">
 
-    <section class="dashboard-header">
-        <div>
-            <p class="tagline">MEMBER DASHBOARD</p>
-            <h1>Welcome, Member 👋</h1>
-            <p>Manage your Arewa Lyrics Hub account and activities.</p>
-        </div>
-    </section>
+                <div class="logo">
+                    AREWA <span>LYRICS HUB</span>
+                </div>
 
-    <section class="member-card">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="dashboard.html" class="active">Dashboard</a>
+                    <a href="index.html">Community</a>
+                    <a href="login.html">Logout</a>
+                </nav>
 
-        <div class="member-info">
-            <p>MEMBER ID</p>
-            <h2>ALH-000001</h2>
+            </div>
 
-            <span class="status">PENDING VERIFICATION</span>
         </div>
 
-        <div class="member-details">
-            <p><strong>Name:</strong> Member Name</p>
-            <p><strong>TikTok:</strong> @username</p>
-            <p><strong>Membership:</strong> Creator</p>
-            <p><strong>Joined:</strong> 2026</p>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="member-dashboard">
+
+        <div class="container">
+
+            <!-- WELCOME -->
+            <section class="member-welcome">
+
+                <div>
+                    <p class="welcome-label">
+                        MEMBER DASHBOARD
+                    </p>
+
+                    <h1>
+                        Welcome, RABIU SALISU
+                    </h1>
+
+                    <p>
+                        Manage your Arewa Lyrics Hub membership,
+                        activities, artist profile and agreements.
+                    </p>
+                </div>
+
+                <div class="member-status">
+                    <span></span>
+                    Pending Verification
+                </div>
+
+            </section>
+
+
+            <!-- MEMBER ID CARD -->
+            <section class="member-profile-card">
+
+                <div class="profile-main">
+
+                    <div class="profile-icon">
+                        ALH
+                    </div>
+
+                    <div>
+
+                        <p class="profile-label">
+                            MEMBER ID
+                        </p>
+
+                        <h2>
+                            ALH-000001
+                        </h2>
+
+                        <p>
+                            Arewa Lyrics Hub Community Member
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+                    <div>
+                        <span>Name</span>
+                        <strong>RABIU SALISU</strong>
+                    </div>
+
+                    <div>
+                        <span>TikTok</span>
+                        <strong>@rabiust1</strong>
+                    </div>
+
+                    <div>
+                        <span>Membership</span>
+                        <strong>Community Member</strong>
+                    </div>
+
+                    <div>
+                        <span>Joined</span>
+                        <strong>01/10/2026</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DASHBOARD CARDS -->
+            <section class="member-section">
+
+                <div class="member-section-title">
+
+                    <h2>
+                        My Activities
+                    </h2>
+
+                    <p>
+                        Access your Arewa Lyrics Hub activities.
+                    </p>
+
+                </div>
+
+
+                <div class="member-card-grid">
+
+
+                    <!-- PROFILE -->
+                    <a href="#profile" class="member-card">
+
+                        <div class="member-card-icon">
+                            👤
+                        </div>
+
+                        <div>
+                            <h3>
+                                My Profile
+                            </h3>
+
+                            <p>
+                                View and manage your member information.
+                            </p>
+                        </div>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- LYRICS -->
+                    <a href="#lyrics" class="member-card">
+
+                        <div class="member-card-icon">
+                            🎵
+                        </div>
+
+                        <div>
+                            <h3>
+                                Lyrics Activities
+                            </h3>
+
+                            <p>
+                                Manage lyrics assignments, submissions and activities.
+                            </p>
+                        </div>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- ARTIST -->
+                    <a href="#artist" class="member-card">
+
+                        <div class="member-card-icon">
+                            🎤
+                        </div>
+
+                        <div>
+                            <h3>
+                                Artist Section
+                            </h3>
+
+                            <p>
+                                Apply for artist services and manage your artist profile.
+                            </p>
+                        </div>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- AGREEMENTS -->
+                    <a href="#agreements" class="member-card">
+
+                        <div class="member-card-icon">
+                            📄
+                        </div>
+
+                        <div>
+                            <h3>
+                                My Agreements
+                            </h3>
+
+                            <p>
+                                View membership and artist agreements.
+                            </p>
+                        </div>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- NOTIFICATIONS -->
+                    <a href="#notifications" class="member-card">
+
+                        <div class="member-card-icon">
+                            🔔
+                        </div>
+
+                        <div>
+                            <h3>
+                                Notifications
+                            </h3>
+
+                            <p>
+                                Check announcements and important updates.
+                            </p>
+                        </div>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- SUPPORT -->
+                    <a href="#support" class="member-card">
+
+                        <div class="member-card-icon">
+                            💬
+                        </div>
+
+                        <div>
+                            <h3>
+                                Support
+                            </h3>
+
+                            <p>
+                                Contact Arewa Lyrics Hub support.
+                            </p>
+                        </div>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- MEMBERSHIP PROGRESS -->
+            <section class="member-section">
+
+                <div class="member-section-title">
+
+                    <h2>
+                        Membership Verification
+                    </h2>
+
+                    <p>
+                        Complete the required steps to activate your membership.
+                    </p>
+
+                </div>
+
+
+                <div class="verification-card">
+
+                    <div class="verification-step completed">
+
+                        <div class="step-number">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Account Created
+                            </strong>
+
+                            <p>
+                                Your account has been created.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="verification-line"></div>
+
+
+                    <div class="verification-step completed">
+
+                        <div class="step-number">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Application Submitted
+                            </strong>
+
+                            <p>
+                                Your membership application was submitted.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="verification-line"></div>
+
+
+                    <div class="verification-step pending">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div>
+                            <strong>
+                                Admin Verification
+                            </strong>
+
+                            <p>
+                                Waiting for administrator verification.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="verification-line"></div>
+
+
+                    <div class="verification-step">
+
+                        <div class="step-number">
+                            4
+                        </div>
+
+                        <div>
+                            <strong>
+                                Membership Activated
+                            </strong>
+
+                            <p>
+                                Your membership will be activated after approval.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTIFICATIONS -->
+            <section class="member-section">
+
+                <div class="member-section-title">
+
+                    <h2>
+                        Recent Notifications
+                    </h2>
+
+                </div>
+
+
+                <div class="member-notification">
+
+                    <div class="notification-icon">
+                        🔔
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Welcome to Arewa Lyrics Hub
+                        </strong>
+
+                        <p>
+                            Your membership application has been received.
+                        </p>
+
+                        <small>
+                            Recently
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="member-notification">
+
+                    <div class="notification-icon">
+                        📢
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Complete Your Profile
+                        </strong>
+
+                        <p>
+                            Make sure your TikTok username and profile information are correct.
+                        </p>
+
+                        <small>
+                            Recently
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
 
-    </section>
+    </main>
 
-    <section class="dashboard-grid">
 
-        <a href="#" class="dashboard-card">
-            <div class="icon">👤</div>
-            <h3>My Profile</h3>
-            <p>View and manage your profile information.</p>
-        </a>
+    <!-- FOOTER -->
+    <footer class="footer">
 
-        <a href="#" class="dashboard-card">
-            <div class="icon">🎵</div>
-            <h3>Lyrics Activities</h3>
-            <p>Access lyrics assignments and activities.</p>
-        </a>
+        <div class="container">
 
-        <a href="#" class="dashboard-card">
-            <div class="icon">🎤</div>
-            <h3>Artist Section</h3>
-            <p>Manage artist applications and submissions.</p>
-        </a>
+            <p>
+                © 2026 Arewa Lyrics Hub. All Rights Reserved.
+            </p>
 
-        <a href="#" class="dashboard-card">
-            <div class="icon">📄</div>
-            <h3>Agreements</h3>
-            <p>View your membership and artist agreements.</p>
-        </a>
+        </div>
 
-        <a href="#" class="dashboard-card">
-            <div class="icon">🔔</div>
-            <h3>Notifications</h3>
-            <p>Check important updates from Arewa Lyrics Hub.</p>
-        </a>
-
-        <a href="#" class="dashboard-card">
-            <div class="icon">💬</div>
-            <h3>Support</h3>
-            <p>Contact Arewa Lyrics Hub support.</p>
-        </a>
-
-    </section>
-
-</main>
-
-<footer>
-    <p>© 2026 Arewa Lyrics Hub. All Rights Reserved.</p>
-</footer>
+    </footer>
 
 </body>
 </html>
