@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Releases | Arewa Lyrics Hub</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        AREWA <span>LYRICS HUB</span>
+    </div>
+
+    <nav>
+        <a href="dashboard.html">Admin Dashboard</a>
+        <a href="../index.html">Website</a>
+    </nav>
+
+</header>
+
+
+<main class="admin-dashboard">
+
+    <section class="admin-header">
+
+        <p class="tagline">MUSIC RELEASE MANAGEMENT</p>
+
+        <h1>Music Releases</h1>
+
+        <p>
+            Manage songs, releases, distribution,
+            deadlines and revenue information.
+        </p>
+
+    </section>
+
+
+    <!-- RELEASE STATISTICS -->
+
+    <section class="admin-stats">
+
+        <div class="stat-card">
+            <span>🎵</span>
+            <h2>0</h2>
+            <p>Total Releases</p>
+        </div>
+
+        <div class="stat-card">
+            <span>🟢</span>
+            <h2>0</h2>
+            <p>Active Releases</p>
+        </div>
+
+        <div class="stat-card">
+            <span>⏳</span>
+            <h2>0</h2>
+            <p>Pending Releases</p>
+        </div>
+
+        <div class="stat-card">
+            <span>⚠️</span>
+            <h2>0</h2>
+            <p>Deadline Alerts</p>
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH / ACTION -->
+
+    <div class="member-tools">
+
+        <input
+            type="search"
+            placeholder="Search song title, artist or Release ID..."
+        >
+
+        <button class="btn primary">
+            Search
+        </button>
+
+        <button class="btn secondary">
+            Add Release
+        </button>
+
+    </div>
+
+
+    <!-- RELEASE TABLE -->
+
+    <div class="members-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Release ID</th>
+                    <th>Song Title</th>
+                    <th>Artist ID</th>
+                    <th>Artist</th>
+                    <th>Model</th>
+                    <th>Release Date</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>ARL-REL-000001</td>
+
+                    <td>Example Song</td>
+
+                    <td>ARL-ART-000001</td>
+
+                    <td>Example Artist</td>
+
+                    <td>70/30</td>
+
+                    <td>26/09/2026</td>
+
+                    <td>26/09/2027</td>
+
+                    <td>
+                        <span class="table-status verified">
+                            Active
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="small-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>ARL-REL-000002</td>
+
+                    <td>Another Song</td>
+
+                    <td>ARL-IND-000002</td>
+
+                    <td>Independent Artist</td>
+
+                    <td>50/50</td>
+
+                    <td>26/09/2026</td>
+
+                    <td>—</td>
+
+                    <td>
+                        <span class="table-status pending">
+                            Pending
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="small-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Arewa Lyrics Hub — Admin Panel
+    </p>
+
+</footer>
+
+
+</body>
+</html>
