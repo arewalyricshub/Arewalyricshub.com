@@ -1,219 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | Arewa Lyrics Hub</title>
 
-    <title>Login | Arewa Lyrics Hub</title>
+<link rel="stylesheet" href="assets/css/style.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<body>
+</head><body><header class="member-header"><div class="member-logo">
+    AREWA <span>LYRICS HUB</span>
+</div>
 
-<header class="member-header">
+<nav class="member-nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="register.html">Register</a>
+</nav>
 
-    <div class="member-logo">
-        AREWA <span>LYRICS HUB</span>
+</header><main class="auth-page"><section class="auth-card">
+
+    <div class="auth-header">
+
+        <span class="welcome-label">
+            AREWA LYRICS HUB
+        </span>
+
+        <h1>Welcome Back</h1>
+
+        <p>
+            Login to access your member dashboard.
+        </p>
+
     </div>
 
-    <nav class="member-nav">
-        <a href="index.html">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="register.html">Register</a>
-    </nav>
 
-</header>
+    <form id="loginForm">
 
+        <div class="form-group">
 
-<main class="auth-page">
+            <label for="loginEmail">
+                Email Address
+            </label>
 
-    <section class="auth-card">
-
-        <div class="auth-header">
-
-            <span class="welcome-label">
-                AREWA LYRICS HUB
-            </span>
-
-            <h1>Welcome Back</h1>
-
-            <p>
-                Login to access your member dashboard.
-            </p>
-
-        </div>
-
-
-        <form id="loginForm">
-
-            <div class="form-group">
-
-                <label for="loginEmail">
-                    Email Address
-                </label>
-
-                <input
-                    type="email"
-                    id="loginEmail"
-                    placeholder="Enter your email"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="loginPassword">
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    id="loginPassword"
-                    placeholder="Enter your password"
-                    required
-                >
-
-            </div>
-
-
-            <div
-                id="loginMessage"
-                class="auth-message"
-                style="display:none;"
-            ></div>
-
-
-            <button
-                type="submit"
-                class="admin-btn"
-                style="width:100%;"
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+                required
             >
-                Login
-            </button>
-
-        </form>
-
-
-        <div class="auth-footer">
-
-            <p>
-                Don't have an account?
-                <a href="register.html">Create Account</a>
-            </p>
 
         </div>
 
-    </section>
 
-</main>
+        <div class="form-group">
+
+            <label for="loginPassword">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+                required
+            >
+
+        </div>
 
 
-<footer class="footer">
-
-    <p>
-        © 2026 Arewa Lyrics Hub. All Rights Reserved.
-    </p>
-
-</footer>
+        <div
+            id="loginMessage"
+            class="auth-message"
+            style="display:none;"
+        ></div>
 
 
-<script>
+        <button
+            type="submit"
+            class="admin-btn"
+            style="width:100%;"
+            id="loginButton"
+        >
+            Login
+        </button>
+
+    </form>
+
+
+    <div class="auth-footer">
+
+        <p>
+            Don't have an account?
+            <a href="register.html">Create Account</a>
+        </p>
+
+    </div>
+
+</section>
+
+</main><footer class="footer"><p>
+    © 2026 Arewa Lyrics Hub. All Rights Reserved.
+</p>
+
+</footer><script>
+
+/* =========================================
+   SUPABASE CONFIGURATION
+========================================= */
+
+const SUPABASE_URL =
+    "https://vyydpzgkpbefxdxplqla.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_rz2cvizCJOnS-qyBOiISsg_sQJk3wCB";
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+/* =========================================
+   LOGIN
+========================================= */
 
 document
 .getElementById("loginForm")
-.addEventListener("submit", function(event) {
+.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
-
     const email =
-        document.getElementById("loginEmail")
+        document
+        .getElementById("loginEmail")
         .value
         .trim();
 
     const password =
-        document.getElementById("loginPassword")
+        document
+        .getElementById("loginPassword")
         .value;
-
 
     const message =
         document.getElementById("loginMessage");
 
-
-    const savedEmail =
-        localStorage.getItem("arewaEmail");
-
-    const savedPassword =
-        localStorage.getItem("arewaPassword");
-
-    const savedMember =
-        localStorage.getItem("arewaMember");
+    const button =
+        document.getElementById("loginButton");
 
 
-    /*
-       Check whether an account
-       has been created on this browser.
-    */
+    message.style.display = "none";
+    message.innerHTML = "";
 
-    if (!savedMember) {
+    button.disabled = true;
+    button.innerText = "Logging in...";
+
+
+    try {
+
+        /* Login with Supabase Auth */
+
+        const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+
+        if (error) {
+            throw error;
+        }
+
+
+        if (!data.user) {
+            throw new Error("User account was not found.");
+        }
+
+
+        /* Get user's profile and role */
+
+        const { data: profile, error: profileError } =
+            await supabaseClient
+            .from("profiles")
+            .select("id, email, role, user_id")
+            .eq("user_id", data.user.id)
+            .maybeSingle();
+
+
+        if (profileError) {
+            throw profileError;
+        }
+
+
+        /*
+           Save basic login state.
+           The real authentication is handled
+           by Supabase Auth.
+        */
+
+        localStorage.setItem(
+            "arewaLoggedIn",
+            "true"
+        );
+
+        localStorage.setItem(
+            "arewaEmail",
+            data.user.email || email
+        );
+
+
+        /* =====================================
+           ADMIN
+        ===================================== */
+
+        if (
+            profile &&
+            profile.role === "admin"
+        ) {
+
+            message.style.display = "block";
+
+            message.innerHTML =
+                "Admin login successful! Redirecting...";
+
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "Admin/dashboard.html";
+
+            }, 700);
+
+            return;
+        }
+
+
+        /* =====================================
+           NORMAL USER
+        ===================================== */
 
         message.style.display = "block";
 
         message.innerHTML =
-            "No account found. Please create an account first.";
-
-        return;
-    }
+            "Login successful! Redirecting...";
 
 
-    /*
-       Check login details.
-    */
+        setTimeout(function() {
 
-    if (
-        email !== savedEmail ||
-        password !== savedPassword
-    ) {
+            window.location.href =
+                "dashboard.html";
+
+        }, 700);
+
+
+    } catch (error) {
+
+        console.error("Login error:", error);
 
         message.style.display = "block";
 
         message.innerHTML =
-            "Incorrect email or password.";
+            error.message ||
+            "Login failed. Please check your email and password.";
 
-        return;
+        button.disabled = false;
+        button.innerText = "Login";
+
     }
-
-
-    /*
-       Login successful.
-    */
-
-    localStorage.setItem(
-        "arewaLoggedIn",
-        "true"
-    );
-
-
-    message.style.display = "block";
-
-    message.innerHTML =
-        "Login successful! Redirecting...";
-
-
-    setTimeout(function() {
-
-        window.location.href =
-            "dashboard.html";
-
-    }, 800);
 
 });
 
-</script>
-
-</body>
+</script></body>
 </html>
