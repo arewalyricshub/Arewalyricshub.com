@@ -3,69 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Arewa Lyrics Hub</title>
+
+    <title>Create Account | Arewa Lyrics Hub</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="logo">AREWA <span>LYRICS HUB</span></div>
+<header class="member-header">
 
-    <nav>
+    <div class="member-logo">
+        AREWA <span>LYRICS HUB</span>
+    </div>
+
+    <nav class="member-nav">
         <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
         <a href="login.html">Login</a>
     </nav>
+
 </header>
+
 
 <main class="auth-page">
 
-    <div class="auth-box">
+    <section class="auth-card">
 
-        <p class="tagline">JOIN OUR COMMUNITY</p>
+        <div class="auth-header">
 
-        <h1>Create Account</h1>
+            <span class="welcome-label">
+                AREWA LYRICS HUB
+            </span>
 
-        <p>Register to become part of Arewa Lyrics Hub.</p>
+            <h1>Create Account</h1>
 
-        <form>
+            <p>
+                Join the Arewa Lyrics Hub community.
+            </p>
 
-            <label>Full Name</label>
-            <input type="text" placeholder="Enter your full name" required>
+        </div>
 
-            <label>Email Address</label>
-            <input type="email" placeholder="Enter your email" required>
 
-            <label>Phone Number</label>
-            <input type="tel" placeholder="Enter your phone number" required>
+        <form id="registerForm">
 
-            <label>TikTok Username</label>
-            <input type="text" placeholder="@username" required>
+            <div class="form-group">
 
-            <label>Password</label>
-            <input type="password" placeholder="Create a password" required>
+                <label for="fullName">
+                    Full Name
+                </label>
 
-            <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm your password" required>
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
 
-            <button type="submit" class="btn primary">
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+234..."
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="tiktok">
+                    TikTok Username
+                </label>
+
+                <input
+                    type="text"
+                    id="tiktok"
+                    placeholder="@username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+            </div>
+
+
+            <div
+                id="registerMessage"
+                class="auth-message"
+                style="display:none;"
+            ></div>
+
+
+            <button
+                type="submit"
+                class="admin-btn"
+                style="width:100%;"
+            >
                 Create Account
             </button>
 
         </form>
 
-        <p class="auth-link">
-            Already have an account?
-            <a href="login.html">Login</a>
-        </p>
 
-    </div>
+        <div class="auth-footer">
+
+            <p>
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </div>
+
+    </section>
 
 </main>
 
-<footer>
-    <p>© 2026 Arewa Lyrics Hub. All Rights Reserved.</p>
+
+<footer class="footer">
+
+    <p>
+        © 2026 Arewa Lyrics Hub. All Rights Reserved.
+    </p>
+
 </footer>
+
+
+<script>
+
+document
+.getElementById("registerForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const fullName =
+        document.getElementById("fullName").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const tiktok =
+        document.getElementById("tiktok").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    const message =
+        document.getElementById("registerMessage");
+
+
+    if (password !== confirmPassword) {
+
+        message.style.display = "block";
+
+        message.innerHTML =
+            "Passwords do not match.";
+
+        return;
+    }
+
+
+    if (password.length < 6) {
+
+        message.style.display = "block";
+
+        message.innerHTML =
+            "Password must be at least 6 characters.";
+
+        return;
+    }
+
+
+    /*
+       TEMPORARY FRONTEND ACCOUNT
+       This will later be replaced with
+       Supabase Authentication + Database.
+    */
+
+    const memberData = {
+
+        memberId: "ALH-000001",
+
+        fullName: fullName,
+
+        email: email,
+
+        phone: phone,
+
+        tiktok: tiktok,
+
+        membershipType: "Community Member",
+
+        status: "Pending Verification",
+
+        joinedDate:
+            new Date().toLocaleDateString(
+                "en-GB",
+                {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric"
+                }
+            )
+
+    };
+
+
+    localStorage.setItem(
+        "arewaMember",
+        JSON.stringify(memberData)
+    );
+
+
+    /*
+       Temporary login information.
+       DO NOT use this for production.
+    */
+
+    localStorage.setItem(
+        "arewaEmail",
+        email
+    );
+
+    localStorage.setItem(
+        "arewaPassword",
+        password
+    );
+
+
+    message.style.display = "block";
+
+    message.innerHTML =
+        "Account created successfully! Redirecting...";
+
+
+    setTimeout(function() {
+
+        window.location.href =
+            "dashboard.html";
+
+    }, 1000);
+
+});
+
+</script>
 
 </body>
 </html>
