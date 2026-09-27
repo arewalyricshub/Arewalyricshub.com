@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Profile | Arewa Lyrics Hub</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
 <header class="member-header">
+
     <div class="member-logo">
         AREWA <span>LYRICS HUB</span>
     </div>
@@ -18,46 +21,76 @@
         <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
         <a href="profile.html" class="active">Profile</a>
-        <a href="index.html">Community</a>
-        <a href="login.html">Logout</a>
+        <a href="index.html#community">Community</a>
+        <a href="#" id="logoutBtn">Logout</a>
     </nav>
+
 </header>
+
 
 <main class="member-dashboard">
 
-    <!-- Page Header -->
     <section class="member-welcome">
+
         <div>
-            <span class="welcome-label">MEMBER PROFILE</span>
+            <span class="welcome-label">
+                MEMBER PROFILE
+            </span>
+
             <h1>My Profile</h1>
-            <p>View and manage your Arewa Lyrics Hub membership information.</p>
+
+            <p>
+                View your Arewa Lyrics Hub membership information.
+            </p>
         </div>
 
         <div class="member-status">
+
             <span class="status-dot"></span>
-            Pending Verification
+
+            <span id="profileStatus">
+                Pending Verification
+            </span>
+
         </div>
+
     </section>
 
 
-    <!-- Profile Card -->
+    <!-- Profile Header -->
+
     <section class="member-profile-card">
 
         <div class="profile-main">
 
-            <div class="profile-icon">
+            <div class="profile-icon" id="profileInitials">
                 RS
             </div>
 
             <div class="profile-details">
-                <span class="profile-label">MEMBER</span>
-                <h2>RABIU SALISU</h2>
-                <p>@rabiust1</p>
+
+                <span class="profile-label">
+                    MEMBER
+                </span>
+
+                <h2 id="profileName">
+                    Member
+                </h2>
+
+                <p id="profileTikTok">
+                    @username
+                </p>
 
                 <div class="profile-id">
+
                     <strong>Member ID:</strong>
-                    ALH-000001
+
+                    <span id="profileMemberId">
+                        ALH-000001
+                    </span>
+
                 </div>
+
             </div>
 
         </div>
@@ -66,37 +99,87 @@
 
 
     <!-- Personal Information -->
+
     <section class="member-section">
 
         <div class="member-section-title">
+
             <h2>Personal Information</h2>
-            <p>Your basic membership information.</p>
+
+            <p>
+                Your registered account information.
+            </p>
+
         </div>
+
 
         <div class="member-card-grid">
 
             <div class="member-card">
-                <div class="member-card-icon">👤</div>
-                <span class="profile-label">FULL NAME</span>
-                <h3>RABIU SALISU</h3>
+
+                <div class="member-card-icon">
+                    👤
+                </div>
+
+                <span class="profile-label">
+                    FULL NAME
+                </span>
+
+                <h3 id="infoName">
+                    —
+                </h3>
+
             </div>
 
-            <div class="member-card">
-                <div class="member-card-icon">✉</div>
-                <span class="profile-label">EMAIL</span>
-                <h3>rabiusalisu@example.com</h3>
-            </div>
 
             <div class="member-card">
-                <div class="member-card-icon">☎</div>
-                <span class="profile-label">PHONE</span>
-                <h3>+234 XXX XXX XXXX</h3>
+
+                <div class="member-card-icon">
+                    ✉
+                </div>
+
+                <span class="profile-label">
+                    EMAIL
+                </span>
+
+                <h3 id="infoEmail">
+                    —
+                </h3>
+
             </div>
 
+
             <div class="member-card">
-                <div class="member-card-icon">♪</div>
-                <span class="profile-label">TIKTOK USERNAME</span>
-                <h3>@rabiust1</h3>
+
+                <div class="member-card-icon">
+                    ☎
+                </div>
+
+                <span class="profile-label">
+                    PHONE
+                </span>
+
+                <h3 id="infoPhone">
+                    —
+                </h3>
+
+            </div>
+
+
+            <div class="member-card">
+
+                <div class="member-card-icon">
+                    ♪
+                </div>
+
+                <span class="profile-label">
+                    TIKTOK USERNAME
+                </span>
+
+                <h3 id="infoTikTok">
+                    —
+                </h3>
+
             </div>
 
         </div>
@@ -104,38 +187,88 @@
     </section>
 
 
-    <!-- Membership Information -->
+    <!-- Membership -->
+
     <section class="member-section">
 
         <div class="member-section-title">
+
             <h2>Membership Information</h2>
-            <p>Your current Arewa Lyrics Hub membership status.</p>
+
+            <p>
+                Your current membership details.
+            </p>
+
         </div>
+
 
         <div class="member-card-grid">
 
             <div class="member-card">
-                <div class="member-card-icon">ID</div>
-                <span class="profile-label">MEMBER ID</span>
-                <h3>ALH-000001</h3>
+
+                <div class="member-card-icon">
+                    ID
+                </div>
+
+                <span class="profile-label">
+                    MEMBER ID
+                </span>
+
+                <h3 id="membershipId">
+                    —
+                </h3>
+
             </div>
 
-            <div class="member-card">
-                <div class="member-card-icon">★</div>
-                <span class="profile-label">MEMBERSHIP TYPE</span>
-                <h3>Community Member</h3>
-            </div>
 
             <div class="member-card">
-                <div class="member-card-icon">✓</div>
-                <span class="profile-label">STATUS</span>
-                <h3>Pending Verification</h3>
+
+                <div class="member-card-icon">
+                    ★
+                </div>
+
+                <span class="profile-label">
+                    MEMBERSHIP TYPE
+                </span>
+
+                <h3 id="membershipType">
+                    Community Member
+                </h3>
+
             </div>
 
+
             <div class="member-card">
-                <div class="member-card-icon">📅</div>
-                <span class="profile-label">JOINED DATE</span>
-                <h3>01 September 2026</h3>
+
+                <div class="member-card-icon">
+                    ✓
+                </div>
+
+                <span class="profile-label">
+                    STATUS
+                </span>
+
+                <h3 id="membershipStatus">
+                    Pending Verification
+                </h3>
+
+            </div>
+
+
+            <div class="member-card">
+
+                <div class="member-card-icon">
+                    📅
+                </div>
+
+                <span class="profile-label">
+                    JOINED DATE
+                </span>
+
+                <h3 id="joinedDate">
+                    —
+                </h3>
+
             </div>
 
         </div>
@@ -144,36 +277,69 @@
 
 
     <!-- Edit Profile -->
+
     <section class="member-section">
 
         <div class="member-section-title">
+
             <h2>Edit Profile</h2>
-            <p>Profile editing will be connected to the database later.</p>
+
+            <p>
+                Update your information.
+            </p>
+
         </div>
+
 
         <div class="settings-card">
 
             <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" value="RABIU SALISU">
+
+                <label for="editName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="editName"
+                >
+
             </div>
+
 
             <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" value="rabiusalisu@example.com">
+
+                <label for="editPhone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="text"
+                    id="editPhone"
+                >
+
             </div>
+
 
             <div class="form-group">
-                <label>Phone Number</label>
-                <input type="text" value="+234 XXX XXX XXXX">
+
+                <label for="editTikTok">
+                    TikTok Username
+                </label>
+
+                <input
+                    type="text"
+                    id="editTikTok"
+                >
+
             </div>
 
-            <div class="form-group">
-                <label>TikTok Username</label>
-                <input type="text" value="@rabiust1">
-            </div>
 
-            <button class="admin-btn" type="button">
+            <button
+                class="admin-btn"
+                id="saveProfile"
+                type="button"
+            >
                 Save Changes
             </button>
 
@@ -182,10 +348,12 @@
     </section>
 
 
-    <!-- Back Button -->
     <section class="member-section">
 
-        <a href="dashboard.html" class="admin-btn">
+        <a
+            href="dashboard.html"
+            class="admin-btn"
+        >
             ← Back to Dashboard
         </a>
 
@@ -195,8 +363,219 @@
 
 
 <footer class="footer">
-    <p>© 2026 Arewa Lyrics Hub. All Rights Reserved.</p>
+
+    <p>
+        © 2026 Arewa Lyrics Hub. All Rights Reserved.
+    </p>
+
 </footer>
 
+
+<script>
+
+const savedMember =
+    localStorage.getItem("arewaMember");
+
+const loggedIn =
+    localStorage.getItem("arewaLoggedIn");
+
+
+/*
+    Protect Profile
+*/
+
+if (!savedMember || loggedIn !== "true") {
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/*
+    Load Member
+*/
+
+if (savedMember) {
+
+    const member =
+        JSON.parse(savedMember);
+
+
+    document.getElementById("profileName")
+        .textContent =
+        member.fullName;
+
+
+    document.getElementById("infoName")
+        .textContent =
+        member.fullName;
+
+
+    document.getElementById("profileTikTok")
+        .textContent =
+        member.tiktok;
+
+
+    document.getElementById("infoTikTok")
+        .textContent =
+        member.tiktok;
+
+
+    document.getElementById("infoEmail")
+        .textContent =
+        member.email;
+
+
+    document.getElementById("infoPhone")
+        .textContent =
+        member.phone;
+
+
+    document.getElementById("profileMemberId")
+        .textContent =
+        member.memberId;
+
+
+    document.getElementById("membershipId")
+        .textContent =
+        member.memberId;
+
+
+    document.getElementById("membershipType")
+        .textContent =
+        member.membershipType;
+
+
+    document.getElementById("profileStatus")
+        .textContent =
+        member.status;
+
+
+    document.getElementById("membershipStatus")
+        .textContent =
+        member.status;
+
+
+    document.getElementById("joinedDate")
+        .textContent =
+        member.joinedDate;
+
+
+    /*
+        Profile initials
+    */
+
+    const parts =
+        member.fullName
+        .trim()
+        .split(" ");
+
+    let initials = "";
+
+    if (parts.length >= 2) {
+
+        initials =
+            parts[0].charAt(0) +
+            parts[parts.length - 1].charAt(0);
+
+    } else {
+
+        initials =
+            parts[0].substring(0, 2);
+
+    }
+
+
+    document.getElementById("profileInitials")
+        .textContent =
+        initials.toUpperCase();
+
+
+    /*
+        Edit fields
+    */
+
+    document.getElementById("editName")
+        .value =
+        member.fullName;
+
+
+    document.getElementById("editPhone")
+        .value =
+        member.phone;
+
+
+    document.getElementById("editTikTok")
+        .value =
+        member.tiktok;
+
+}
+
+
+/*
+    Save Profile
+*/
+
+document
+.getElementById("saveProfile")
+.addEventListener("click", function() {
+
+    const member =
+        JSON.parse(
+            localStorage.getItem("arewaMember")
+        );
+
+
+    member.fullName =
+        document.getElementById("editName")
+        .value
+        .trim();
+
+
+    member.phone =
+        document.getElementById("editPhone")
+        .value
+        .trim();
+
+
+    member.tiktok =
+        document.getElementById("editTikTok")
+        .value
+        .trim();
+
+
+    localStorage.setItem(
+        "arewaMember",
+        JSON.stringify(member)
+    );
+
+
+    alert("Profile updated successfully!");
+
+    location.reload();
+
+});
+
+
+/*
+    Logout
+*/
+
+document
+.getElementById("logoutBtn")
+.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    localStorage.removeItem("arewaLoggedIn");
+
+    window.location.href =
+        "login.html";
+
+});
+
+</script>
+
 </body>
-  </html>
+    </html>
